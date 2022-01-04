@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokes</title>
+</head>
+
+<body>
+    <h1>Get Some Jokes</h1>
+    <form action="/" method="POST">
+        <label for="category">Choose a category:
+            <select name="cat" id="category">
+                <option value="any" selected>Any</option>
+                <option value="misc">Misc</option>
+                <option value="dark">Dark</option>
+                <option value="programming">Programming</option>
+            </select>
+        </label>
+        <br>
+        <label for="type">Choose a type:
+            <select name="type" id="type">
+                <option value="both" selected>Both</option>
+                <option value="single">Single</option>
+                <option value="twopart">Twopart</option>
+            </select>
+        </label>
+        <br>
+        <label for="keyword">Type some keywords:
+            <input type="text" name="keyword" placeholder="Keywords" id="keyword">
+        </label>
+        <br>
+        <button type="submit">Tell me a joke</button>
+    </form>
+</body>
+
+</html>
