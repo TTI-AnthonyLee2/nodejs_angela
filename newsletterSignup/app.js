@@ -36,11 +36,11 @@ app.post('/', (req, res) => {
 
     const listId = '7611737cf4';
     const apiKey = 'd8962cec21454168c17ab80a9ca61918-us20';
-
     const url = `https://us20.api.mailchimp.com/3.0/lists/${listId}`;
+
     const options = {
         method: 'post',
-        auth: `anthony1:${apiKey}`
+        auth: `anthony1:${apiKey}` // username: API key
     };
 
     const httpsReq = https.request(url, options, httpsRes => {
@@ -65,6 +65,10 @@ app.post('/', (req, res) => {
     // res.write(`<p>Email: ${email}</p>`);
 
     // res.send();
+});
+
+app.post('/failure', (req, res) => {
+    res.redirect('/');
 });
 
 app.listen(3000, () => {
