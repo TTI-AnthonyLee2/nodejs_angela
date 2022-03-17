@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1><%= kindOfDay %></h1>
+
+    <ul>
+        <% todoList.map(item => { %>
+            <li><%= item %></li>
+        <% }) %>
+    </ul>
+
+    <form action="/" method="post">
+        <input type="text" name="newItem">
+        <button type="submit" name="addBtn">Add</button>
+        <button type="submit" name="clearBtn">Clear all</button>
+    </form>
+
+    <!-- <% if (kindOfDay === "Weekend") { %>
+        <h1 style="color: lightgreen">It's a <%= kindOfDay %> !</h1>
+    <% } else { %>
+        <h1 style="color: salmon;">It's a <%= kindOfDay %> !</h1>
+    <% } %> -->
+</body>
+</html>
