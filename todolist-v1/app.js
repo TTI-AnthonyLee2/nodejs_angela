@@ -24,9 +24,9 @@ app.route("/")
             month: "long",
         };
 
-        // Use Embedded JavaScript templating (EJS)
         const day = today.toLocaleDateString("en-US", dateOptions);
-
+        
+        // Use Embedded JavaScript templating (EJS)
         res.render("list", {page: page, listTitle: day, todoList: list});
 
         // Use sendFile method, but it's a hardcode
@@ -51,6 +51,10 @@ app.route("/work")
         res.redirect("/work");
     });
     
+app.route("/about")
+    .get((req, res) => {
+        res.render("about");
+    })
 
 app.listen(3000, () => {
     console.log("Server is opening on port 3000.");
