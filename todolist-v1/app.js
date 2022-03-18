@@ -1,6 +1,9 @@
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+
+const getDate = require(`${__dirname}/date.js`);
 
 const app = express();
 
@@ -16,18 +19,8 @@ let workList = [];
 app.route("/")
     .get((req, res) => {
         page = "";
-
-        const today = new Date();
-        const dateOptions = {
-            weekday: "long",
-            day: "numeric",
-            month: "long",
-        };
-
-        const day = today.toLocaleDateString("en-US", dateOptions);
-        
         // Use Embedded JavaScript templating (EJS)
-        res.render("list", {page: page, listTitle: day, todoList: list});
+        res.render("list", {page: page, listTitle: getDate(), todoList: list});
 
         // Use sendFile method, but it's a hardcode
         // res.sendFile(`${__dirname}/index.html`, err => {
